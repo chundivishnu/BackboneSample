@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+        <title>My Cart</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <link rel="stylesheet" type="text/css" href="css/form.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div id="menu" class="menu cf"></div>
+            <h1></h1>
+            <div id="content"></div>
+        </div>
+        
+        <script src="vendors/jquery.js"></script>
+        <script src="vendors/underscore-min.js"></script>
+        <script src="vendors/backbone-min.js"></script>
+        <script type="text/template" id="tpl-product">
+            <div class="single_prodcut">
+		<div class="contanier">
+			<div class="leftimg"><img id="my_img" src="img/primg1.jpg"></div>
+			<div class="right_content">
+				<div class="pr_title">HUGO</div>
+				<div class="br_name">Jason Slim Fit Dress Shirt</div>
+				<div class="price">
+					Price : &nbsp; <span class="p_tag">$120.00</span> 
+                    <span class="sp_tag">(20% of $150.00)</span>
+				</div>
+				<div class="color_picker">
+					<div class="colo_tit">COLOR: <span id="colorname">Light Blue</span></div>
+					<div class="color_ims">
+						<ul>
+							<li><a id="blue"><img src="img/color1.tif"></a></li>
+							<li><a id="white"><img src="img/color2.tif"></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="size_vari">
+					<div class="sizev" >
+						<span>Size :</span>	&nbsp;
+						<select id="size" class="sdropdown">
+							<option value=0>-- Select Size--</option>
+							<option value=34>34</option>
+							<option value=38>38</option>
+							<option value=40>40</option>
+							<option value=42>42</option>
+						</select>
+					</div>
+					<div class="qty">
+						<span>Quantity :</span>&nbsp;
+						<select id="qty" class="qdropdown">
+							<option value=0>-- Select Qty--</option>
+							<option value=1>1</option>
+							<option value=2>2</option>
+							<option value=3>3</option>
+							<option value=4>4</option>
+						</select>
+					</div>
+				</div>
+				<div class="checkout">
+                    <br />
+                    <button id="checkout">BUY NOW</button>
+				</div>
+			</div>
+		</div>
+	</div>
+        </script>
+        <script type="text/template" id="tpl-address">
+        <div class="formclass">
+            <form id="addressform">
+                Name:<br>
+                <input type="text" name="name" placeholder="Name">
+                <br>
+                Email:<br>
+                <input type="text" name="email" placeholder="Email">
+                <br>
+                Telephone:<br>
+                <input type="text" name="phone" placeholder="Telephone">
+                <br>
+                Address:<br>
+                <input type="text" id="adr" name="address" placeholder="Address">
+                <br>
+                City:<br>
+                <input type="text" name="city" placeholder="City">
+                <br>
+                State:<br>
+                <input type="text" name="state" placeholder="State">
+                <br>
+                Zipcode:<br>
+                <input type="text" name="zip" placeholder="Zipcode">
+                <br><br>
+                <div class="submitbutton">
+                    <input type="button" id="ship" value="Ship to this Addess">
+                </div>
+            </form>
+        </div>
+        </script>
+        <script type="text/template" id="tpl-confirm">
+            <div id="product_summary">
+                <h1>Product Summary</h1>
+                <h2 id="pname"></h2>
+                <h4 id="desc"></h4>
+                Size: <span id="size"></span>, 
+                Quantity: <span id="qty"></span><br>
+                Price: $<span id="price"></span>.00<br>
+                Subtotal: $<span id="total"></span>.00
+            </div>
+            <div id="adress_summary">
+                <h1>Ship to this Adress</h1>
+                <h2 id="name"></h2>
+                <span id="address"></span>,
+                <span id="city"></span>,<br>
+                <span id="state"></span> - 
+                <span id="zipcode"></span><br>
+                <span id="phone"></span>
+            </div>
+            <div class="submitbutton">
+                    <input type="button" id="checkout" value="Checkout">
+            </div>
+        </script>
+        <script src="app.js"></script>
+      
+        
+        <script>
+            window.onload = function() {
+                app.init();
+            }
+        </script>
+    </body>
+</html>
